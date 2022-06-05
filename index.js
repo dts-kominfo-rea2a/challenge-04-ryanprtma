@@ -12,22 +12,13 @@ const createDate = (dates, jumlah) => {
   let epochTime = ""
   let epochTimeArr = []
 
-  if (jumlah == 0) {
-    epochTime = `${Date.parse(dates[0]) * 0.001}`
-  } else if (jumlah == 1) {
-    epochTime = `${Date.parse(dates[1]) * 0.001}`
-  } else if (jumlah == 2) {
-    epochTime = `${Date.parse(dates[2]) * 0.001}`
-  } else if (jumlah == 3) {
-    epochTime = `${Date.parse(dates[3]) * 0.001}`
-  } else if (jumlah == 4) {
-    epochTime = `${Date.parse(dates[4]) * 0.001}`
-  }
-  else {
+  if (jumlah == undefined) {
     for (let i = 0; i <= dates.length - 1; i++) {
       epochTimeArr.push(Date.parse(dates[i]) * 0.001)
       epochTime = epochTimeArr.sort().join('-')
     }
+  } else {
+    epochTime = `${Date.parse(dates[jumlah]) * 0.001}`
   }
 
   return epochTime
@@ -43,6 +34,7 @@ const createDate = (dates, jumlah) => {
 
   // '1614841200' (dalam string)
   console.log(createDate?.(dates, 2));
+
 })();
 
 module.exports = {
