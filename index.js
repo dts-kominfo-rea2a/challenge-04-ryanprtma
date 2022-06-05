@@ -8,8 +8,7 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = (date, jumlah) => {
-  const dates = date.sort()
+const createDate = (dates, jumlah) => {
   let epochTime = ""
   let epochTimeArr = []
 
