@@ -8,20 +8,21 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = (dates, jumlah) => {
+const createDate = (date, jumlah) => {
+  const dates = date.sort()
   let epochTime = ""
   let epochTimeArr = []
 
   if (jumlah == 0) {
     epochTime = `${Date.parse(dates[0]) * 0.001}`
   } else if (jumlah == 1) {
-    epochTime = `${Date.parse(dates[0]) * 0.001}`
+    epochTime = `${Date.parse(dates[1]) * 0.001}`
   } else if (jumlah == 2) {
-    epochTime = `${Date.parse(dates[0]) * 0.001}`
+    epochTime = `${Date.parse(dates[2]) * 0.001}`
   } else if (jumlah == 3) {
-    epochTime = `${Date.parse(dates[0]) * 0.001}`
+    epochTime = `${Date.parse(dates[3]) * 0.001}`
   } else if (jumlah == 4) {
-    epochTime = `${Date.parse(dates[0]) * 0.001}`
+    epochTime = `${Date.parse(dates[4]) * 0.001}`
   }
   else {
     for (let i = 0; i <= dates.length - 1; i++) {
