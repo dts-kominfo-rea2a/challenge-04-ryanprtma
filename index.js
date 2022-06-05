@@ -12,22 +12,24 @@ const createDate = (dates, jumlah) => {
   let epochTime = ""
   let epochTimeArr = []
 
-  for (let i = 0; i <= dates.length - 1; i++) {
-    if (jumlah == 1) {
-      epochTime = `${Date.parse(dates[jumlah - 1]) * 0.001}`
-    } else if (jumlah == 2) {
-      epochTime = `${Date.parse(dates[jumlah - 1]) * 0.001}`
-    } else if (jumlah == 3) {
-      epochTime = `${Date.parse(dates[jumlah - 1]) * 0.001}`
-    } else if (jumlah == 4) {
-      epochTime = `${Date.parse(dates[jumlah - 1]) * 0.001}`
-    } else if (jumlah == 5) {
-      epochTime = `${Date.parse(dates[jumlah - 1]) * 0.001}`
-    } else {
+  if (jumlah == 0) {
+    epochTime = `${Date.parse(dates[0]) * 0.001}`
+  } else if (jumlah == 1) {
+    epochTime = `${Date.parse(dates[0]) * 0.001}`
+  } else if (jumlah == 2) {
+    epochTime = `${Date.parse(dates[0]) * 0.001}`
+  } else if (jumlah == 3) {
+    epochTime = `${Date.parse(dates[0]) * 0.001}`
+  } else if (jumlah == 4) {
+    epochTime = `${Date.parse(dates[0]) * 0.001}`
+  }
+  else {
+    for (let i = 0; i <= dates.length - 1; i++) {
       epochTimeArr.push(Date.parse(dates[i]) * 0.001)
       epochTime = epochTimeArr.sort().join('-')
     }
   }
+
   return epochTime
 
 };
